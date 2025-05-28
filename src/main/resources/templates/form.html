@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Online Resume Builder</title>
+</head>
+<body>
+    <h1>Resume Builder</h1>
+    <form th:action="@{/submit}" th:object="${resume}" method="post">
+        <input type="text" th:field="*{fullName}" placeholder="Full Name" required><br>
+        <input type="email" th:field="*{email}" placeholder="Email" required><br>
+        <input type="text" th:field="*{phone}" placeholder="Phone" required><br>
+        <textarea th:field="*{education}" placeholder="Education" required></textarea><br>
+        <textarea th:field="*{experience}" placeholder="Experience" required></textarea><br>
+        <textarea th:field="*{skills}" placeholder="Skills" required></textarea><br>
+        <button type="submit">Generate Resume</button>
+    </form>
+</body>
+</html>
